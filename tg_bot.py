@@ -2,4 +2,4 @@
 
 import aiogram
 
-print('Telegram bot coming soon')yes
+print('Telegram bot coming soon')
