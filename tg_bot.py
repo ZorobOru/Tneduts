@@ -2,7 +2,8 @@ import requests
 import time
 
 API_BOT = 'https://api.telegram.org/bot'
-TOKEN_BOT = '6182115604:AAFHordDBdMYAMAe4H3ImY-S8DaZlI6EDzE'
+with open('bot_token.txt', 'r', encoding='utf-8') as token:
+    TOKEN_BOT = token.read()
 API_CAT = 'https://api.thecatapi.com/v1/images/search'
 ERROR_TEXT = 'Здесь должен была быть картинка, но что-то пошло не так'
 SUCCESS_TEXT = 'это конечно хорошо, но как насчет котика?'
@@ -15,7 +16,7 @@ user_text: str
 
 while counter < 100:
     print('attempt=', counter)
-    updates = requests.get(f'{API_BOT}{TOKEN_BOT}/getUpdates?offset={offset + 1}').json()
+    updates = requests.get(f'{API_BOT}{TOKEN_BOT}/getUpdates?offset={offset + 1}&timeout=50').json()
 
     for result in updates['result']:
         offset = result['update_id']
