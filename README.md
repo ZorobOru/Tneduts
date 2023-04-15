@@ -1,1 +1,1 @@
-# Here I teach ways to interact with Telegram API
+# Here I teaching ways to interact with Telegram API
